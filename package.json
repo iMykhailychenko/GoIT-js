@@ -7,14 +7,23 @@
     "lint": "eslint . --ext .js,.json"
   },
   "devDependencies": {
-    "eslint": "^6.4.0",
+    "eslint": "^6.5.1",
     "eslint-config-airbnb-base": "^14.0.0",
-    "eslint-config-prettier": "^6.3.0",
+    "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-import": "^2.18.2",
-    "eslint-plugin-json": "^1.4.0",
+    "eslint-plugin-json": "^2.0.1",
     "eslint-plugin-prettier": "^3.1.1",
     "prettier": "^1.18.2"
   },
-  "repository": "https://github.com/iMykhailychenko/GoIT-js.git",
-  "author": "imykhailychenko <igor.c.m@ukr.net>"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iMykhailychenko/GoIT-js.git"
+  },
+  "author": "imykhailychenko <igor.c.m@ukr.net>",
+  "bugs": {
+    "url": "https://github.com/iMykhailychenko/GoIT-js/issues"
+  },
+  "homepage": "https://github.com/iMykhailychenko/GoIT-js#readme",
+  "keywords": [],
+  "description": ""
 }

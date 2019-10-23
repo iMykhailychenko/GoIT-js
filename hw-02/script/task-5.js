@@ -1,18 +1,16 @@
-console.log('Модуль 2, Задание 5 ----------------------------------');
+const log = function (a) {
+  console.log(a);
+};
 
-function checkForSpam(str) {
-  const formattedString = str.toLowerCase();
-  const hasSpam =
-    formattedString.includes('spam') || formattedString.includes('sale');
+const checkForSpam = function (str) {
+  const lowerCaseStr = str.toLowerCase();
+  return lowerCaseStr.includes('spam') || lowerCaseStr.includes('sale');
+};
 
-  const boolean = hasSpam ? true : false;
-  return boolean;
-}
+log(checkForSpam('Latest technology news')); // false
 
-console.log(checkForSpam('Latest technology news')); // false
+log(checkForSpam('JavaScript weekly newsletter')); // false
 
-console.log(checkForSpam('JavaScript weekly newsletter')); // false
+log(checkForSpam('Get best sale offers now!')); // true
 
-console.log(checkForSpam('Get best sale offers now!')); // true
-
-console.log(checkForSpam('[SPAM] How to earn fast money?')); // true
+log(checkForSpam('[SPAM] How to earn fast money?')); // true

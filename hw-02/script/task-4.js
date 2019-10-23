@@ -1,31 +1,23 @@
-console.log('Модуль 2, Задание 4 ----------------------------------');
+const log = function (a) {
+  console.log(a);
+};
 
-function formatString(string) {
-  let arrayFromString = string.split('');
-  let formattedString = '';
+const formatString = function (string) {
+  return string.length > 40 ? `${string.slice(0, 40)}...` : string;
+};
 
-  if (arrayFromString.length <= 40) {
-    formattedString = string;
-  } else {
-    arrayFromString.length = 40;
-    arrayFromString.push('...');
-    formattedString = arrayFromString.join('');
-  }
-
-  return formattedString;
-}
-
-console.log(formatString('Curabitur ligula sapien, tincidunt non.'));
+log(formatString('Curabitur ligula sapien, tincidunt non.'));
 // вернется оригинальная строка
 
-console.log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
+log(formatString('Vestibulum facilisis, purus nec pulvinar iaculis.'));
 // вернется форматированная строка
 
-console.log(formatString('Curabitur ligula sapien.'));
+log(formatString('Curabitur ligula sapien.'));
 // вернется оригинальная строка
 
-console.log(
+log(
   formatString(
-    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.'
-  )
+    'Nunc sed turpis. Curabitur a felis in nunc fringilla tristique.',
+  ),
 );
+// вернется форматированная строка

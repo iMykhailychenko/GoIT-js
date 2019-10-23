@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="https://avatars0.githubusercontent.com/u/50461642?s=460&v=4"
+      type="image/png"
+    />
+    <title>Module 3</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h3 class="balance">Your balance: 0 $</h3>
+    <form action="" method="post">
+      <lable>Введите сумму на которую хотите пополнить счёт </lable
+      ><input
+        class="depositInput"
+        type="number"
+        name="deposit"
+        min="0"
+        vlaue="0"
+        placeholder="Пополненить"
+      /><button class="deposit" type="button">Пополненить</button>
+      <lable>Введите сумму на которую хотите снять</lable
+      ><input
+        class="withdrawInput"
+        type="number"
+        name="withdraw"
+        min="0"
+        placeholder="Снять сумму"
+      /><button class="withdraw" type="button">Снять</button>
+      <div class="details">
+        <lable>Введите ID транзакции чтобы узнать подробности</lable
+        ><input
+          class="transactionInput"
+          type="number"
+          name="transaction"
+          min="0"
+          placeholder="Transaction ID"
+        /><button class="transaction" type="button">Подробнее</button>
+        <lable>Сумма всех транзакций по типу</lable
+        ><select class="typeInput"
+          ><option>deposit</option
+          ><option>withdraw</option></select
+        ><button class="total_by_type" type="button">Сумма по типу</button>
+      </div>
+      <div class="bytype"></div>
+      <div class="details">
+        <button class="history" type="button">
+          Обновить историю транзакций</button
+        ><button class="historyHide" type="button">Скрыть</button>
+      </div>
+    </form>
+    <table class="teble-two">
+      <tbody class="tbody">
+        <tr>
+          <th>ID</th>
+          <th>Amount</th>
+          <th>Type</th>
+          <th>Date</th>
+        </tr>
+      </tbody>
+    </table>
+    <script type="module" src="script/task-1.js"></script>
+    <script type="module" src="script/task-2.js"></script>
+    <script type="module" src="script/task-3.js"></script>
+    <script type="module" src="script/task-4.js"></script>
+    <script type="module" src="script/task-5.js"></script>
+    <script type="module" src="script/task-6.js"></script>
+    <script type="module" src="script/task-7.js"></script>
+  </body>
+</html>

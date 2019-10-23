@@ -1,21 +1,20 @@
-console.log('Модуль 2, Задание 3 ----------------------------------');
+const log = function (a) {
+  console.log(a);
+};
 
-function findLongestWord(string) {
-  let arrayWithNumbers = [];
-  const arrayFromString = string.split(' ');
-
-  for (const word of arrayFromString) {
-    arrayWithNumbers.push(word.length);
+const findLongestWord = function (string) {
+  let maxWord = ' ';
+  const array = string.split(' ');
+  for (const item of array) {
+    if (maxWord.length < item.length) {
+      maxWord = item;
+    }
   }
+  return maxWord;
+};
 
-  const maxNumber = Math.max(...arrayWithNumbers);
-  const maxLengthIndex = arrayWithNumbers.indexOf(maxNumber);
+log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
 
-  return arrayFromString[maxLengthIndex];
-}
+log(findLongestWord('Google do a roll')); // 'Google'
 
-console.log(findLongestWord('The quick brown fox jumped over the lazy dog')); // 'jumped'
-
-console.log(findLongestWord('Google do a roll')); // 'Google'
-
-console.log(findLongestWord('May the force be with you')); // 'force'
+log(findLongestWord('May the force be with you')); // 'force'
