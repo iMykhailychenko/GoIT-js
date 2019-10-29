@@ -1,0 +1,136 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding: 16%;
+  font-family: "segoe ui", sans-serif;
+  font-size: 12px;
+}
+
+@media (min-width: 900px) {
+  body {
+    padding: 120px;
+  }
+}
+
+h2 {
+  padding-bottom: 15px;
+}
+
+li {
+  margin-left: 20px;
+  padding: 15px 0px;
+}
+
+input,
+button,
+#counter {
+  background: #fefefe;
+  padding: 5px;
+  cursor: pointer;
+  border-radius: 2px;
+  border: 1px solid #067ed4;
+  transition: 0.3s;
+}
+
+button:hover,
+button:focus {
+  background: #f5fcff;
+}
+
+.homework__btn {
+  margin-bottom: 30px;
+  padding: 15px;
+}
+
+.homework__title {
+  padding-bottom: 40px;
+}
+
+.homework__item {
+  border-bottom: 1px dashed #aaa;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.homework__item:hover {
+  background: #f5fcff;
+  letter-spacing: 4px;
+  color: #27aee8;
+}
+
+.task__title {
+  margin-bottom: 40px;
+  padding: 10px 20px;
+  font-weight: 600;
+  background: #eee;
+  color: #999;
+}
+
+#to-top {
+  position: fixed;
+  bottom: -60px;
+  right: 60px;
+  height: 50px;
+  width: 50px;
+  opacity: 0;
+  border-radius: 50%;
+  border: none;
+  transition: 0.3s;
+  background: #f8f8f8;
+}
+
+#to-top:hover {
+  background: #eee;
+}
+
+#gallery {
+  display: flex;
+}
+
+.gallery__item {
+  height: 240px;
+  width: 460px;
+  list-style: none;
+  overflow: hidden;
+}
+
+.gallery__img {
+  height: auto;
+  width: 100%;
+}
+
+#value {
+  padding: 0 40px;
+}
+
+#counter {
+  display: inline-block;
+}
+
+#validation-input {
+  border: 3px solid #bdbdbd;
+}
+
+#validation-input.valid {
+  border-color: #4caf50;
+}
+
+#validation-input.invalid {
+  border-color: #f44336;
+}
+
+#boxes {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid gray;
+}
+
+.radio-btn {
+  padding-top: 20px;
+}

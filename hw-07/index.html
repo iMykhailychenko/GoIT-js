@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="icon"
+      href="https://avatars0.githubusercontent.com/u/50461642?s=460&v=4"
+      type="image/png"
+    />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Module 7</title>
+  </head>
+  <body>
+    <button class="homework__btn">&#8701; back to main page</button>
+    <div class="homework__main">
+      <h2 class="homework__title">Модуль 7. Домашнее задание</h2>
+      <ul class="homework__list">
+        <li class="homework__item homework__item--task1" data-item="1">
+          Задание 1
+        </li>
+        <li class="homework__item homework__item--task2" data-item="2">
+          Задание 2
+        </li>
+        <li class="homework__item homework__item--task3" data-item="3">
+          Задание 3
+        </li>
+        <li class="homework__item homework__item--task4" data-item="4">
+          Задание 4
+        </li>
+        <li class="homework__item homework__item--task5" data-item="5">
+          Задание 5
+        </li>
+        <li class="homework__item homework__item--task6" data-item="6">
+          Задание 6
+        </li>
+        <li class="homework__item homework__item--task7" data-item="7">
+          Задание 7
+        </li>
+        <li class="homework__item homework__item--task8" data-item="8">
+          Задание 8
+        </li>
+      </ul>
+    </div>
+    <div class="homework__task homework__task--1" data-task="1">
+      <h4 class="task__title">Задание 1</h4>
+      <ul id="categories">
+        <li class="item">
+          <h2>Животные</h2>
+
+          <ul>
+            <li>Кот</li>
+            <li>Хомяк</li>
+            <li>Лошадь</li>
+            <li>Попугай</li>
+          </ul>
+        </li>
+        <li class="item">
+          <h2>Продукты</h2>
+
+          <ul>
+            <li>Хлеб</li>
+            <li>Петрушка</li>
+            <li>Творог</li>
+          </ul>
+        </li>
+        <li class="item">
+          <h2>Технологии</h2>
+
+          <ul>
+            <li>HTML</li>
+            <li>CSS</li>
+            <li>JavaScript</li>
+            <li>React</li>
+            <li>Node</li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+
+    <div class="homework__task homework__task--2" data-task="2">
+      <h4 class="task__title">Задание 2</h4>
+      <ul id="ingredients"></ul>
+    </div>
+
+    <div class="homework__task homework__task--3" data-task="3">
+      <h4 class="task__title">Задание 3</h4>
+      <ul id="gallery"></ul>
+    </div>
+
+    <div class="homework__task homework__task--4" data-task="4">
+      <h4 class="task__title">Задание 4</h4>
+      <p style="padding: 0 0 20px 0; color: #888;">
+        Нажмите и удерживайте кнопку если хотите быстро увеличить/уменьшить
+        значение или кликните на кнопку для увеличения/уменьшения на один пункт
+      </p>
+      <div id="counter">
+        <button type="button" data-action="decrement">-1</button>
+        <span id="value">0</span>
+        <button type="button" data-action="increment">+1</button>
+      </div>
+    </div>
+
+    <div class="homework__task homework__task--5" data-task="5">
+      <h4 class="task__title">Задание 5</h4>
+      <input type="text" placeholder="Ваше имя?" id="name-input" />
+      <h1>Привет, <span id="name-output">незнакомец</span>!</h1>
+    </div>
+
+    <div class="homework__task homework__task--6" data-task="6">
+      <h4 class="task__title">Задание 6</h4>
+      <input
+        type="text"
+        id="validation-input"
+        data-length="6"
+        placeholder="Введи 6 символов"
+      />
+    </div>
+
+    <div class="homework__task homework__task--7" data-task="7">
+      <h4 class="task__title">Задание 7</h4>
+      <input id="font-size-control" type="range" />
+      <br />
+      <span id="text">Абракадабра!</span>
+    </div>
+
+    <div class="homework__task homework__task--8" data-task="8">
+      <h4 class="task__title">Задание 8</h4>
+      <div id="controls">
+        <input type="number" min="0" max="100" step="1" />
+        <button type="button" data-action="render">Создать</button>
+        <button type="button" data-action="destroy">Очистить</button>
+        <div class="radio-btn">
+          <p style="padding: 10px 0; color: #888;">
+            Выберите один из вариантов предложеных ниже если хотите получить
+            элементы определённого оттенка
+          </p>
+          <input
+            class="red colors"
+            type="radio"
+            name="color"
+            onchange="boxesCreater.changed(event);"
+            value="258"
+          />
+          Red
+          <input
+            class="green colors"
+            type="radio"
+            name="color"
+            onchange="boxesCreater.changed(event);"
+            value="258"
+          />
+          Green
+          <input
+            class="blue colors"
+            type="radio"
+            name="color"
+            onchange="boxesCreater.changed(event);"
+            value="258"
+          />
+          Blue
+        </div>
+      </div>
+      <div id="boxes"></div>
+    </div>
+
+    <button type="button" id="to-top">&#129065;</button>
+
+    <script src="./script/main.js"></script>
+    <script src="./script/task-1.js"></script>
+    <script src="./script/task-2.js"></script>
+    <script src="./script/task-3.js"></script>
+    <script src="./script/task-4.js"></script>
+    <script src="./script/task-5.js"></script>
+    <script src="./script/task-6.js"></script>
+    <script src="./script/task-7.js"></script>
+    <script src="./script/task-8.js"></script>
+  </body>
+</html>
