@@ -1,54 +1,107 @@
-console.log('task 8 --------------------------------------------');
 
-const boxesCreater = {
+console.log('task 8 --------------------------------------------');
+const log = (a) => console.log(a);
+
+const boxesCreator = {
   input: document.querySelector('#controls input'),
   boxes: document.getElementById('boxes'),
   buttonCreate: document.querySelector('button[data-action="render"]'),
   buttonDestroy: document.querySelector('button[data-action="destroy"]'),
+  redRadio: document.querySelector('.red'),
+  greenRadio: document.querySelector('.green'),
+  blueRadio: document.querySelector('.blue'),
+  combinedRadio: document.querySelector('.combined'),
+
   destroyBoxes() {
-    [...this.boxes.children].forEach((item) => {
-      this.boxes.removeChild(item);
-      this.input.value = '';
-    });
+    [...this.boxes.children].map((item) => this.boxes.removeChild(item));
   },
-  changed(event) {
-    [...document.querySelectorAll('.colors')].forEach((item) => item.value = '20');
-    event.target.value = 258;
+
+  red() {
+    let color = 0;
+    if (this.redRadio.checked) {
+      color = 255;
+    } else {
+      color = 10;
+    }
+    return color;
   },
+
+  green() {
+    let color = 0;
+    if (this.greenRadio.checked) {
+      color = 255;
+    } else {
+      color = 10;
+    }
+    return color;
+  },
+
+  blue() {
+    let color = 0;
+    if (this.blueRadio.checked) {
+      color = 255;
+    } else {
+      color = 10;
+    }
+    return color;
+  },
+
   genetateColor() {
-    const red = Math.floor(Math.random() * Number(document.querySelector('.red').value));
-    const green = Math.floor(Math.random() * Number(document.querySelector('.green').value));
-    const blue = Math.floor(Math.random() * Number(document.querySelector('.blue').value));
-    return [red, green, blue];
+    const colors = [0, 0, 0];
+
+    if (this.combinedRadio.checked) {
+      colors[0] = Math.round(Math.random() * 255);
+      colors[1] = Math.round(Math.random() * 255);
+      colors[2] = Math.round(Math.random() * 255);
+    } else {
+      colors[0] = Math.round(Math.random() * this.red());
+      colors[1] = Math.round(Math.random() * this.green());
+      colors[2] = Math.round(Math.random() * this.blue());
+    }
+
+    return colors;
   },
+
+  borderColor() {
+    let border = '';
+
+    if (this.redRadio.checked) {
+      border = '#f63737';
+    } else if (this.greenRadio.checked) {
+      border = '#37f677';
+    } else {
+      border = '#3a73be';
+    }
+
+    return border;
+  },
+
   createBoxes() {
-    let boxSize = 0;
-    for (let i = 0; i < this.input.value; i += 1) {
-      const colors = this.genetateColor();
+    let param = 20;
+    const boxesArray = [];
+    const countOfBoxes = this.input.valueAsNumber;
 
-      const box = document.createElement('div');
+    boxesArray.length = countOfBoxes;
 
-      box.style.width = `${30 + boxSize}px`;
-      box.style.height = `${30 + boxSize}px`;
-      boxSize += 10;
-      box.style.margin = '0 4px 8px 0';
-      box.style.backgroundColor = `rgba(${colors[0]},${colors[1]},${colors[2]}, 0.2)`;
+    const boxesElemArray = [...boxesArray].map((item) => {
+      param += 10;
+      item = `<div style="width: ${param}px; height: ${param}px; border: 1px solid ${this.borderColor()}; background: rgba(${this.genetateColor().join(',')},0.2)"></div>`;
+      return item;
+    });
 
-      if (document.querySelector('.red').value === '258') {
-        box.style.border = '1px solid #ff2828';
-      }
-      if (document.querySelector('.green').value === '258') {
-        box.style.border = '1px solid #32E84A';
-      }
-      if (document.querySelector('.blue').value === '258') {
-        box.style.border = '1px solid #067ed4';
-      }
+    const boxeSstring = boxesElemArray.reduce((acc, elem) => acc + elem, '');
 
-      this.boxes.appendChild(box);
-	  }
+    this.boxes.insertAdjacentHTML('beforeend', boxeSstring);
+  },
+
+  createClick() {
+    this.buttonCreate.addEventListener('click', this.createBoxes.bind(this));
+  },
+
+  destroyClick() {
+    this.buttonDestroy.addEventListener('click', this.destroyBoxes.bind(this));
   },
 };
 
-
-boxesCreater.buttonCreate.addEventListener('click', boxesCreater.createBoxes.bind(boxesCreater));
-boxesCreater.buttonDestroy.addEventListener('click', boxesCreater.destroyBoxes.bind(boxesCreater));
+boxesCreator.createClick();
+boxesCreator.destroyClick();

@@ -128,7 +128,7 @@
     <div class="homework__task homework__task--8" data-task="8">
       <h4 class="task__title">Задание 8</h4>
       <div id="controls">
-        <input type="number" min="0" max="100" step="1" />
+        <input type="number" min="0" max="100" step="1" value="0" />
         <button type="button" data-action="render">Создать</button>
         <button type="button" data-action="destroy">Очистить</button>
         <div class="radio-btn">
@@ -136,30 +136,29 @@
             Выберите один из вариантов предложеных ниже если хотите получить
             элементы определённого оттенка
           </p>
-          <input
-            class="red colors"
-            type="radio"
-            name="color"
-            onchange="boxesCreater.changed(event);"
-            value="258"
-          />
-          Red
-          <input
-            class="green colors"
-            type="radio"
-            name="color"
-            onchange="boxesCreater.changed(event);"
-            value="258"
-          />
-          Green
-          <input
-            class="blue colors"
-            type="radio"
-            name="color"
-            onchange="boxesCreater.changed(event);"
-            value="258"
-          />
-          Blue
+          <ul>
+            <li>
+              <input
+                class="combined colors"
+                type="radio"
+                name="color"
+                checked
+              />
+              <span>Combined</span>
+            </li>
+            <li>
+              <input class="red colors" type="radio" name="color" />
+              <span>Red</span>
+            </li>
+            <li>
+              <input class="green colors" type="radio" name="color" />
+              <span>Green</span>
+            </li>
+            <li>
+              <input class="blue colors" type="radio" name="color" />
+              <span>Blue</span>
+            </li>
+          </ul>
         </div>
       </div>
       <div id="boxes"></div>

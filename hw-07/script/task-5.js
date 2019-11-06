@@ -9,7 +9,7 @@ const userName = {
 	  } else {
       this.output.textContent = target.value;
 	  }
-	},
+  },
 };
 
 userName.input.addEventListener('input', userName.insertInputText.bind(userName));

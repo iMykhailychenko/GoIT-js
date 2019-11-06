@@ -5,7 +5,7 @@ const fontSize = {
   text: document.getElementById('text'),
   changeFontSize() {
 	  const rangeValue = Number(this.inputSlider.valueAsNumber);
-	  this.text.style.fontSize = `${rangeValue * 0.5  }px`;
+	  this.text.style.fontSize = `${rangeValue * 0.5}px`;
   },
 };
 

@@ -12,17 +12,13 @@ const ingredients = [
 
 const ingredientsList = {
   list: document.querySelector('#ingredients'),
-
   createItemsArr(arr) {
-    const items = [];
-    arr.map((ingredient) => {
+    return arr.map((ingredient) => {
       const item = document.createElement('li');
-      item.textContent = ingredient;
-      items.push(item);
+	  item.textContent = ingredient;
+	  return item;
     });
-    return items;
   },
-
   appendItems(arr) {
     const liEl = this.createItemsArr(arr);
     liEl.forEach((element) => this.list.appendChild(element));

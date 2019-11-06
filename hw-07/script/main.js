@@ -1,57 +1,65 @@
+'use strict'
+class Page {
+  constructor({
+    body, main, backEl, listEl, tasks,
+  }) {
+    this._body = body;
+    this._main = main;
+    this._backEl = backEl;
+    this._listEl = listEl;
+    this._tasks = tasks;
+    this._hidde();
+    this._runOpenFn(this._tasks);
+  }
+
+  _hidde() {
+    document.querySelectorAll('.homework__task').forEach((item) => (item.hidden = true));
+    this._backEl.hidden = true;
+  }
+
+
+  _unhiddeHtm(element) {
+    if (event.target.dataset.item === element.dataset.task) {
+      element.hidden = false;
+      this._backEl.hidden = false;
+      this._main.hidden = true;
+    }
+  }
+
+  _unhiddeMenu(element) {
+    element.hidden = true;
+    this._backEl.hidden = true;
+    this._main.hidden = false;
+  }
+
+  _openTask(element) {
+    const unhiddeHtmBounded = this._unhiddeHtm.bind(this, element);
+    this._listEl.addEventListener('click', unhiddeHtmBounded);
+  }
+
+  _openMain(element) {
+    const unhiddeMenuBounded = this._unhiddeMenu.bind(this, element);
+    this._backEl.addEventListener('click', unhiddeMenuBounded);
+  }
+
+  _runOpenFn(tasks) {
+    tasks.forEach((item) => {
+	  this._openTask(item);
+	  this._openMain(item);
+    });
+  }
+}
+
+
 const elements = {
   body: document.querySelector('body'),
   main: document.querySelector('.homework__main'),
   backEl: document.querySelector('.homework__btn'),
   listEl: document.querySelector('.homework__list'),
+  tasks: document.querySelectorAll('.homework__task'),
 };
 
-document
-  .querySelectorAll('.homework__task')
-  .forEach((item) => (item.hidden = true));
-elements.backEl.hidden = true;
-
-class Page {
-  constructor({
-    body, main, backEl, listEl,
-  }) {
-    this.body = body;
-    this.main = main;
-    this.backEl = backEl;
-    this.listEl = listEl;
-  }
-
-  unhiddeHtm(element) {
-    if (event.target.dataset.item === element.dataset.task) {
-      element.hidden = false;
-      this.backEl.hidden = false;
-      this.main.hidden = true;
-    }
-  }
-
-  unhiddeMenu(element) {
-    element.hidden = true;
-    this.backEl.hidden = true;
-    this.main.hidden = false;
-  }
-
-  openTask(element) {
-    const unhiddeHtmBounded = this.unhiddeHtm.bind(this, element);
-    this.listEl.addEventListener('click', unhiddeHtmBounded);
-  }
-
-  openMain(element) {
-    const unhiddeMenuBounded = this.unhiddeMenu.bind(this, element);
-    this.backEl.addEventListener('click', unhiddeMenuBounded);
-  }
-}
-
-const tasks = document.querySelectorAll('.homework__task');
-
-tasks.forEach((item) => {
-  const taskPage = new Page(elements);
-  taskPage.openTask(item);
-  taskPage.openMain(item);
-});
+const taskPage = new Page(elements);
 
 const scroll = {
   link: document.getElementById('to-top'),

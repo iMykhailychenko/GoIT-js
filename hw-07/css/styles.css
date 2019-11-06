@@ -126,11 +126,21 @@ button:focus {
 #boxes {
   display: flex;
   flex-wrap: wrap;
-  margin-top: 50px;
+  margin-top: 30px;
   padding-top: 20px;
   border-top: 1px solid gray;
 }
 
+#boxes div{
+  margin: 5px;
+}
+
 .radio-btn {
   padding-top: 20px;
+}
+
+.radio-btn li {
+  margin: 0;
+  padding: 5px 0;
+  list-style: none;
 }
